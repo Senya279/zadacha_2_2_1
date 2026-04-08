@@ -20,6 +20,10 @@ public class UserServiceImp implements UserService {
       userDao.add(user);
    }
 
+   @Transactional
+   @Override
+   public void update(User user){userDao.update(user);}
+
    @Transactional(readOnly = true)
    @Override
    public List<User> listUsers() {
